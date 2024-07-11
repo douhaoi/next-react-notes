@@ -17,6 +17,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Redis
+        run: |
+          sudo apt update
+          sudo apt install redis-server
+
+      - name: Start Redis Server
+        run: sudo systemctl start redis-server
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
