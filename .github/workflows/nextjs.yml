@@ -28,7 +28,8 @@ jobs:
 
       - name: Install pnpm
         run: |
-          curl -fsSL https://get.pnpm.io/install.sh | sh -
+          export SHELL=$(which bash)
+          curl -fsSL https://get.pnpm.io/install.sh | bash -
           export PATH="~/.local/share/pnpm:$PATH"
           
       - name: Setup Pages
@@ -46,12 +47,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Install dependencies
-        run: |
-          ~/.local/share/pnpm/pnpm install
+        run: ~/.local/share/pnpm/pnpm install
 
       - name: Build with Next.js
-        run: |
-          ~/.local/share/pnpm/pnpm run build
+        run: ~/.local/share/pnpm/pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
