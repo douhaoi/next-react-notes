@@ -31,7 +31,7 @@ jobs:
           export SHELL=$(which bash)
           curl -fsSL https://get.pnpm.io/install.sh | bash -
           export PATH="~/.local/share/pnpm:$PATH"
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -67,3 +67,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          enablement: true  # 确保启用 GitHub Pages
