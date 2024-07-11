@@ -1,0 +1,10 @@
+{
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  // 列宽度
+  "editor.wordWrap": "on",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+}
